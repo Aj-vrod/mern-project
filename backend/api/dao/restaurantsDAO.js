@@ -8,8 +8,9 @@ export default class RestaurantsDAO {
         try {
             restaurants = await conn.db(process.env.RESTREV_NS).collection("restaurants")
         } catch (e) {
-            console.error(`Unable to establish a connection handle in restaurantsDAO: ${e}`)
+            console.error(
+                `Unable to establish a connection handle in restaurantsDAO: ${e}`
+            )
         }
-
     } 
 }
