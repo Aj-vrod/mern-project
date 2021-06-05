@@ -21,7 +21,7 @@ export default class RestaurantsController {
         })
 
         let response = {
-            restaurants = restaurantsList,
+            restaurants: restaurantsList,
             page: page,
             filters: filters,
             entries_per_page: restaurantsPerPage,
