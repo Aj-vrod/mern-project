@@ -9,6 +9,17 @@ export default class ReviewsController {
                 name: req.body.name,
                 _id: req.body.user_id
             }
+            const date = new Date()
+
+            const ReviewResponse = await ReviewsDAO.addReview(
+                restaurantId,
+                userInfo,
+                review,
+                date,
+            )
+            res.json({ status: "success" })
+        } catch(e) {
+            res.status(500).json({ error: e.message })
         }
     }
 }
