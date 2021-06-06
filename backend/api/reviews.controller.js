@@ -22,4 +22,19 @@ export default class ReviewsController {
             res.status(500).json({ error: e.message })
         }
     }
+
+    static async apiUpdateReview(req, res, next) {
+        try {
+            const reviewId = req.body.review_id
+            const text = req.body.text
+            const date = new Date()
+
+            const reviewResponse = await ReviewsDAO.updateReview(
+                reviewId,
+                req.body.user_id,
+                text,
+                date,
+            )
+        }
+    }
 }
