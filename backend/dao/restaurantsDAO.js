@@ -93,6 +93,12 @@ export default class RestaurantsDAO {
                     },
                 },
             ]
+            return await restaurants.aggregate(pipeline).next()
+        } catch(e) {
+            console.error(`Something went wrong in getRestaurantById: ${e}`)
+            throw e
         }
     }
+
+    
 }
