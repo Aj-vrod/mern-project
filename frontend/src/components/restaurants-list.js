@@ -37,7 +37,26 @@ const RestaurantsList = (props) => {
       })
       .catch(e => {
         console.log(e);
+      });
+  };
+
+  const retrieveCuisines = () => {
+    RestaurantDataService.getCuisines()
+      .then(response => {
+        console.log(response.data);
+        setCuisines(["All cuisines"].concat(response.data));
       })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  const refreshList = () => {
+    retrieveRestaurants();
+  }
+
+  const find = (query, by) => {
+
   }
 
 
